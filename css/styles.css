@@ -1,0 +1,96 @@
+/* General styles */
+
+@font-face {
+    font-family: 'Flame on';
+    src: url('/fonts/FlameonBlack.woff2') format('woff2'),
+        url('/fonts/FlameonBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+  
+body {
+    font-family: Arial, Tahoma, Serif;
+    color: black;
+}
+
+img {
+    max-width: 100vh;
+    max-height: 100vh;
+}
+  
+a {
+    color: black;
+    text-decoration: none;;
+}
+
+a:hover{
+    /*font-size: 110%;*/
+    font-weight: bold;
+}
+   
+
+/* Header and main navigation */
+
+header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+@media (max-width: 800px) {
+    header {
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+
+header h1 {
+    text-transform: uppercase;
+    font-family: Flame on, sans-serif;
+    font-size: 2rem;
+}
+
+header menu {
+    display: flex;
+    list-style: none;
+}
+
+header li {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.current {
+    text-decoration: underline;
+}
+
+
+/* Section styles */
+
+article {
+    padding: 2rem 4rem;
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 800px) {
+    article {
+      flex-direction: column;
+    }
+  }
+
+.left {
+}
+
+.right {
+    padding-right: 2rem;
+}
