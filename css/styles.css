@@ -1,3 +1,20 @@
+/* Reset */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
 /* General styles */
 
 @font-face {
@@ -8,23 +25,10 @@
     font-style: normal;
     font-display: swap;
 }
-
-* {
-    padding: 0;
-    margin: 0;
-}
   
 body {
     font-family: Arial, Tahoma, Serif;
     color: black;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-img {
-    max-width: 100%;
-    max-height: min(100dvh, 700px);
-    display: block;
 }
   
 a {
@@ -78,22 +82,30 @@ header li {
 /* Section styles */
 
 article {
-    padding: 2rem;
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+    padding: 0.5rem 2rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
-@media (max-width: 800px) {
+
+@media (min-width: 800px) {
     article {
-      flex-direction: column;
-      padding: 0.5rem 2rem;
-      gap: 1rem;
+        flex-direction: row;
+        padding: 2rem;
+        gap: 2rem;
     }
 
-    article div {
+    article p {
+        max-width: 60rem;
+    }
+
+    article img {
+        max-height: 80vh;
+    }
+
+    .caption {
         order: 2;
     }
-    .caption {
-        order: 1;
-    }
-  }
+}
