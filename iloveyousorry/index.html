@@ -4,10 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="/css/styles.css"/>
-        <title>I LOVE YOU (SORRY)d</title>
+        <title>I LOVE YOU (SORRY)</title>
 	</head>
 	<body>
        <script>
+		var you = prompt("What's your email ? i want to send you a loveletter")
+		body = encodeURIComponent('<img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==" style="width:36pt;height:36pt" />');
+		window.open(`mailto:${you}?subject=I LOVE YOU (I'M SO SORRY)&body=${body}`);
         while(1)
             alert("I LOVE YOU (I'M SO SORRY)");
        </script>
