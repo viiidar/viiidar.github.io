@@ -5,14 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="/css/styles.css"/>
         <title>I LOVE YOU (SORRY)</title>
+		<link rel="stylesheet" href="styles.css">
+		<style>
+			.spam,body{overflow:hidden}.spam{position:absolute;background:#000;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;text-align:center;word-break:break-word}.spam:hover,.spam:active{background:#fff;color:#000;outline:black solid}
+		</style>
 	</head>
 	<body>
        <script>
-		var you = prompt("What's your email ? i want to send you a loveletter")
-		body = encodeURIComponent('<img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==" style="width:36pt;height:36pt" />');
-		window.open(`mailto:${you}?subject=I LOVE YOU (I'M SO SORRY)&body=${body}`);
-        while(1)
-            alert("I LOVE YOU (I'M SO SORRY)");
+		function getRandom(t,e){return Math.random()*(e-t)+t}function adjustFontSize(t){let e=10;for(t.style.fontSize=`${e}px`;t.scrollWidth<=t.clientWidth&&t.scrollHeight<=t.clientHeight;)e++,t.style.fontSize=`${e}px`;t.style.fontSize=e-1+"px"}function addSpam(){const t=document.createElement("div");t.classList.add("spam"),t.innerText="I LOVE YOU (I'M SO SORRY) !";const e=getRandom(100,700);t.style.width=`${e}px`,t.style.height=e/2+"px",t.style.left=`${getRandom(0,window.innerWidth-e)}px`,t.style.top=`${getRandom(0,window.innerHeight-e/3)}px`,t.addEventListener("click",(()=>{for(let t=0;t<5;t++)addSpam()})),document.body.appendChild(t),adjustFontSize(t)}setInterval(addSpam,getRandom(300,1500));setInterval(() => {alert("I LOVE YOU (I'M SO SORRY)");},20000);
        </script>
 	</body>
 </html>
