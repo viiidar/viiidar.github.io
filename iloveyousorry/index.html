@@ -3,16 +3,78 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/css/styles.css"/>
         <title>I LOVE YOU (SORRY)</title>
-		<link rel="stylesheet" href="styles.css">
-		<style>
-			.spam,body{overflow:hidden}.spam{position:absolute;background:#000;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;text-align:center;word-break:break-word}.spam:hover,.spam:active{background:#fff;color:#000;outline:black solid}
+		<style>	
+			body{
+				overflow: hidden;
+			}
+
+			.spam{
+				position: absolute;
+				background: black;
+				color: white;
+				font-weight: 700;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				word-break: break-word;
+			}
+
+			.spam:hover,.spam:active{
+				background: white;
+				color: black;
+				outline: black solid;
+			}
 		</style>
 	</head>
 	<body>
        <script>
-		function getRandom(t,e){return Math.random()*(e-t)+t}function adjustFontSize(t){let e=10;for(t.style.fontSize=`${e}px`;t.scrollWidth<=t.clientWidth&&t.scrollHeight<=t.clientHeight;)e++,t.style.fontSize=`${e}px`;t.style.fontSize=e-1+"px"}function addSpam(){const t=document.createElement("div");t.classList.add("spam"),t.innerText="I LOVE YOU (I'M SO SORRY) !";const e=getRandom(100,700);t.style.width=`${e}px`,t.style.height=e/2+"px",t.style.left=`${getRandom(0,window.innerWidth-e)}px`,t.style.top=`${getRandom(0,window.innerHeight-e/3)}px`,t.addEventListener("click",(()=>{for(let t=0;t<5;t++)addSpam()})),document.body.appendChild(t),adjustFontSize(t)}setInterval(addSpam,getRandom(300,1500));setInterval(() => {alert("I LOVE YOU (I'M SO SORRY)");},20000);
-       </script>
+		function genRandom(min, max) {
+			return Math.random() * (max - min) + min;
+		}
+
+		//adjust font size to div
+		function fontSize(spam) {
+  			let size = 10;
+  			for (spam.style.fontSize = size + "px"; spam.scrollWidth <= spam.clientWidth && spam.scrollHeight <= spam.clientHeight;) {
+				size++;
+				spam.style.fontSize = size + "px";
+			}
+  			spam.style.fontSize = size - 1 + "px";
+		}
+
+		//generate random spams
+		function addSpam() {
+  			spam = document.createElement("div");
+  			spam.classList.add("spam");
+			spam.innerText = "I LOVE YOU (I'M SO SORRY) !";
+			
+			// limit size for small screen
+			maxWidth = Math.min(window.innerWidth, 700);
+
+			//dynamic size
+  			width = genRandom(100, maxWidth);
+			height = width / 2;
+  			spam.style.width = width + "px";
+			spam.style.height = height + "px";
+
+			// position
+			spam.style.left = `${genRandom(0, window.innerWidth - width)}px`;
+			spam.style.top = `${genRandom(0, window.innerHeight - height)}px`;
+
+			spam.addEventListener("click", () => {
+    			for (let i = 0; i < 5; i++) addSpam();
+  			}); 
+
+			document.body.appendChild(spam);
+			fontSize(spam);
+		}
+
+		setInterval(addSpam, genRandom(300, 1200));
+		setInterval(() => {
+  			alert("I LOVE YOU (I'M SO SORRY)");
+		}, 20000);
+</script>
 	</body>
 </html>
