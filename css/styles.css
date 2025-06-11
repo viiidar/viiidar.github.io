@@ -111,6 +111,14 @@ article {
     .caption {
         order: 2;
     }
+
+    .bio {
+        font-size: 1.2rem;
+    }
+    
+    .bio p {
+        margin-bottom: 1.2rem;
+    }
 }
 
 /* Desktop slider */
