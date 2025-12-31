@@ -36,12 +36,9 @@ a {
     text-decoration: none;
 }
 
-@media (min-width: 800px) {
-    a:hover{
+a:hover {
         font-weight: bold;
-    }
 }
-   
 
 /* Header and main navigation */
 
@@ -136,16 +133,40 @@ a {
     width: calc(100% - 2rem);
     opacity: 0;
     z-index: 0;
-    animation: slideFade 20s infinite;
+    animation-name: slideFade;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
   }
 
   @keyframes slideFade {
-    0%   { opacity: 0; z-index: 0; }
-    5%   { opacity: 1; z-index: 1; }
-    25%  { opacity: 1; z-index: 1; }
-    30%  { opacity: 0; z-index: 0; }
-    100% { opacity: 0; z-index: 0; }
-  }
+    /*z-index to click on link*/
+    0%   { opacity: 0; z-index: 0;}
+    2%   { opacity: 1; z-index: 1;}
+    15%  { opacity: 1; z-index: 1;}
+    16%  { opacity: 0; z-index: 0;}
+    100% { opacity: 0; z-index: 0;}
+}
+}
+
+/* Works List */
+.works-list {
+  margin: 4rem;
+  font-size: 1.5rem;
+}
+
+.works-list ul {
+  list-style: none;
+  width: 100%;
+}
+.works-row {
+    margin-bottom: 0.5rem;
+    /*border-bottom: 1px solid #000;*/
+}
+
+.works-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 /* Portfolio link */
@@ -164,5 +185,9 @@ a {
     width: 100%;
     height: auto;
     display: block;
+    margin: 1rem auto;
+}
+
+.artwork-content p {
     margin: 1rem auto;
 }
